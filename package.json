@@ -4,7 +4,7 @@
   "description": "Memorable UUID generator written in JS with up to 10.5 Billion possible combinations.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
