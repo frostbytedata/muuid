@@ -62,7 +62,7 @@ const rand = {
 	]
 }
 
-export const muuid = (opts) => {
+const muuid = (opts) => {
 	const components = ['adjective', 'color', 'verb', 'noun', 'number']
 	let results = []
 	const _opts = {
@@ -97,3 +97,5 @@ export const muuid = (opts) => {
 	}
 	return results
 }
+
+module.exports = muuid
