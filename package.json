@@ -1,6 +1,6 @@
 {
   "name": "@frostbytedata/muuid",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Memorable UUID generator written in JS with up to 10.5 Billion possible combinations.",
   "main": "index.js",
   "scripts": {
