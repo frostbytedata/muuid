@@ -97,8 +97,3 @@ const muuid = (opts) => {
 	}
 	return results
 }
-
-console.info(muuid({
-
-	quantity: 10
-}))
