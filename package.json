@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/frostbytedata/muuid.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "index.js",
     "README.md"
