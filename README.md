@@ -53,6 +53,15 @@ Outputs:
   'bewildered-goldenrod-crawling-coyote-93'
 ]
 ```
+
+### Using example.js
+
+Simply examine and run the `example.js` file in your terminal to see how to use the library:
+
+```sh
+node example.js
+```
+
 ---
 ## Config Options
 
@@ -65,6 +74,20 @@ It can take the following format types:
 ```
 
 `quantity` How many ids you want to batch generate at a single time.
+
+`duplicateReport` Will output in console a simple report of duplicates.
+
+---
+
+---
+## Universal Uniqueness
+
+Ok, you got me, technically this library does not produce Universally Unique memorable IDs as the name implies...
+When generating and using this tool to create IDs in your application, you should check their uniqueness against values you have already generated and stored.
+Also, due to the nature of this being a "memorable ID", I would avoid relying on this library to provide universal uniqueness across multiple different independent systems.
+I may attempt to modify the config options in the future to allow users to generate a more universally unique number or string to the output more akin to something you would see in a `UUID`.
+
+In my testing, out of 5 million generated `muuids`, around 0.075% of them will not be unique, and that percentage slowly rises as you generate more. This is why it is critical to implement a duplicate check in your system before using any given outputted `muuid`.
 
 ---
 

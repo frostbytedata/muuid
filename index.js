@@ -68,11 +68,13 @@ const muuid = (opts) => {
 	const _opts = {
 		format: [ 'adjective', 'color', 'verb', 'noun', 'number' ],
 		quantity: 10,
+		duplicateReport: false,
 	}
 	if (opts) {
 		opts = {
 			format: opts.format ? opts.format : _opts.format,
-			quantity: opts.quantity ? opts.quantity : _opts.quantity
+			quantity: opts.quantity ? opts.quantity : _opts.quantity,
+			duplicateReport: opts.duplicateReport ? opts.duplicateReport : _opts.duplicateReport
 		}
 	} else {
 		opts = {..._opts}
@@ -94,6 +96,27 @@ const muuid = (opts) => {
 	}
 	for (let i = 1; i <= opts.quantity; i++) {
 		results.push(generate())
+	}
+
+	if (opts.duplicateReport === true) {
+		const counts = {};
+		const report = [];
+		results.forEach((x) => { counts[x] = (counts[x] || 0) + 1; });
+		results.forEach((x) => {
+			if (counts[x] > 1) {
+				report.push({
+					value: x,
+					count: counts[x]
+				})
+			}
+		})
+		if (report.length > 0) {
+			console.info('------------------------------------------------------------------')
+			console.info(`${report.length} duplicates reported: `, report)
+		}
+		console.info('\n------------------------------------------------------------------')
+		console.info(`${((report.length / results.length) * 100).toPrecision(2)}% of generated values were duplicates`)
+		console.info('------------------------------------------------------------------')
 	}
 	return results
 }
